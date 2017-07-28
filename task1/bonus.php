@@ -2,7 +2,7 @@
 $eq = function ($str1, $str2) {
     $strCount = function ($str) {
         $sum = 0;
-        if (($str == null) || ($str == !ctype_alpha($str))) {
+        if (($str == null) || !ctype_alpha($str)) {
             $sum = 0;
         } else {
             $str = str_split(strtoupper($str));
@@ -30,4 +30,4 @@ $eq('ZzZz', 'ffPFF');
 echo '<br />';
 $eq('kl', 'lz');
 echo '<br />';
-$eq(null, '');
+$eq(null, ' ');
