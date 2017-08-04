@@ -38,7 +38,7 @@ foreach ($uArr($t) as $value) {
 $averageArr = array_flip($lower) + array_flip($higher);
 asort($averageArr);
 $mid = array_slice(array_keys($averageArr), 0, 3);
-
+sort($mid);
 print_r($min);
 echo '<br />';
 print_r($max);
