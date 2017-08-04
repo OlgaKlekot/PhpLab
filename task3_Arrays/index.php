@@ -16,18 +16,33 @@ echo '<br />';
 
 $uArr = function ($arr) {
     sort($arr);
-    $arr = array_unique($arr);
-    return $arr;
+    $nevArr = array_unique($arr);
+    return $nevArr;
 };
 $t = [33, 15, 17, 20, 23, 23, 28, 40, 21, 19, 31, 18, 30, 31, 28, 23, 19, 28, 27, 30, 39, 17, 17, 20, 19, 23, 28, 30, 34, 28];
 
 $min = array_slice($uArr($t), 0, 3);
+
+$max = array_slice($uArr($t), -3, 3);
+
+$averageValue = round(array_sum($t)/count($t));
+$lower = [];
+$higher = [];
+foreach ($uArr($t) as $value) {
+    if ($value <= $averageValue) {
+        $lower[strval($averageValue - $value)]= $value;
+    } else {
+        $higher[strval($value - $averageValue)] = $value;
+    };
+};
+$averageArr = array_flip($lower) + array_flip($higher);
+asort($averageArr);
+$mid = array_slice(array_keys($averageArr), 0, 3);
+
 print_r($min);
 echo '<br />';
-$max = array_slice($uArr($t), -3, 3);
 print_r($max);
 echo '<br />';
-$mid = array_slice($uArr($t), ((count($uArr($t))/2) - 1), 3);
 print_r($mid);
 echo '<br />';
 
