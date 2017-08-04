@@ -1,7 +1,15 @@
 <?php
 $str = 'var_test_text';
-$stR = preg_replace('/_\w/', 'T', $str);
-echo $stR . '<br />';
+$cC = function ($str) {
+    $arr = explode('_', $str);
+    for ($i = 1; $i < count($arr); $i++) {
+        $arr[$i] = ucfirst($arr[$i]);
+    };
+    $newStr = join($arr);
+    return $newStr;
+};
+print_r($cC($str));
+echo  '<br />';
 
 
 
