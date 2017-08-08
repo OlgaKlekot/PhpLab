@@ -1,10 +1,10 @@
 <?php
 $repeat = function ($arr) {
-    $str = join($arr);
-    for ($i = 0; $i < count($arr); $i++) {
-        $newStr .= str_repeat($str[$i], $str[$i]);
+    $newArr = [];
+    for ($i = 0, $n = 0; $i < count($arr); $i++) {
+        $newArr += array_fill($n, $arr[$i], $arr[$i]);
+        $n += $arr[$i];
     };
-    $newArr = str_split($newStr);
     print_r($newArr);
 };
 $arr1 = [1, 3, 2, 4];
@@ -134,10 +134,7 @@ echo $equator($d) . '<br />';
 
 
 $uniqVal = function ($arr) {
-    $u =[];
-    foreach ($arr as $value) {
-        $u[] = strval($value);
-    }
+    $u = array_map('strval', $arr);
     echo array_search('1', array_count_values($u)) . '<br />';
 };
 $uniqVal([1, 1, 1, 2, 1, 1]);
