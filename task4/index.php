@@ -7,7 +7,7 @@ echo '<br />';
 
 //1.2
 $d = 'dotcom.com';
-echo checkdnsrr($d) ? $d . ' - valid' : $d . 'not valid';
+echo checkdnsrr($d) ? $d . ' - valid' : $d . ' - not valid';
 
 //1.3
 
