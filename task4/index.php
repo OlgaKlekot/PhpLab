@@ -38,11 +38,11 @@ function mySort($arr, $index, $length = null) {
     $subArr = array_slice($arr, $index, $length, true);
     asort($subArr);
     array_splice($arr, $index, $length, $subArr);
-    print_r($arr);
+    return $arr;
 }
-mySort($arr, 3);
+print_r(mySort($arr, 3));
 echo '<br />';
-mySort($arr, 3,5);
+print_r(mySort($arr, 3,5));
 echo '<br />';
 
 
